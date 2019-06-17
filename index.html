@@ -27,41 +27,95 @@
                 <fieldset>
                     <legend>Datos de Usuario</legend>
                     <div>
-                        <div class="labels">
+                        <div>
                             <label id="name-label" for="name"><i class="fas fa-user"></i> Nombre: </label>
                         </div>
-                        <div class="fields">
-                            <input type="text" name="name" id="name" class="input-field" placeholder="Nombre" required>
+                        <div>
+                            <input type="text" name="name" id="name" placeholder="Nombre" required>
                         </div>
                     </div>
                     <div>
-                        <div class="labels">
+                        <div>
                             <label id="email-label"for="email"><i class="fas fa-address-card"></i> Email: </label>
                         </div>
-                        <div class="fields">
-                            <input type="email" name="email" id="email" class="input-field" placeholder="example@email.com" required>
+                        <div>
+                            <input type="email" name="email" id="email" placeholder="you@example.com" required>
                         </div>
                     </div>
                     <div>
-                        <div class="labels">
+                        <div>
                             <label id="number-label" for="number"><i class="fas fa-sad-tear"></i> Edad: </label>
                         </div>
-                        <div class="fields">
-                            <input type="number" name="age" id="number" class="input-field" min="1" max="125" placeholder="Ej.: 30" required>
+                        <div>
+                            <input type="number" name="age" id="number" min="1" max="125" placeholder="Ej.: 30" required>
                         </div>
                     </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Nivel Educativo y Varios</legend>
-                    <div class="labels">
-                            <label id="name-label" for="name"><i class="fas fa-user"></i> Nombre: </label>
+                    <div>
+                        <div>
+                            <label for="dropdown"><i class="fas fa-graduation-cap"></i> Nivel Educativo: </label>
                         </div>
-                        <div class="fields">
-                            <input type="text" name="name" id="name" class="input-field" placeholder="Nombre" required>
+                        <div>
+                            <select name="nivel-educativo" id="dropdown">
+                                <option selected disabled value>Selecciona una Opción</option>
+                                <option value="basica">Educación Básica</option>
+                                <option value="diversificada-profesional">Diversificada y Profesional</option>
+                                <option value="superior">Superior</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="hombre-mujer"><i class="fas fa-venus-mars"></i> Género: </label>
+                        </div>
+                        <div class="flex-direction">
+                            <label for="hombre">
+                                Masculino
+                                <input type="radio" name="hombre-mujer" id="hombre" value="hombre">
+                            </label>
+                            
+                            <label for="mujer">
+                                Femenino 
+                                <input type="radio" name="hombre-mujer" id="mujer" value="mujer">
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="animales"><i class="fas fa-paw"></i> Mascota: </label>
+                        </div>
+                        <div class="flex-direction">
+                            <label for="gato">
+                                <input type="checkbox" name="animales[]" id="gato" value="gato"> 
+                                Gato
+                            </label>
+                            
+                            <label for="perro">
+                                <input type="checkbox" name="animales[]" id="perro" value="perro">
+                                Perro 
+                            </label>
                         </div>
                     </div>
                 </fieldset>
+
+                <fieldset>
+                    <legend>Déjenos su Comentario</legend>
+                    <div>
+                        <div>
+                            <label for="contactenos"><i class="fas fa-keyboard"></i> Comentarios: </label>
+                        </div>
+                        <div>
+                            <textarea name="contactenos" id="contactenos"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button id="submit" type="submit"><span>Enviar</span></button>
+                </div>
             </form>
         </main>
 

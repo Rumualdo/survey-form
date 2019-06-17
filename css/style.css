@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -28,12 +29,18 @@ body {
     font-size: medium;
     color: white;
     background: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75) 10%, #100e17),
-                url("../img/backgrounds/contact-us.jpg") center / 100vw 100vh no-repeat fixed;
+        url("../img/backgrounds/contact-us.jpg") center / 100vw 100vh no-repeat fixed;
 }
 
 header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -51,10 +58,15 @@ header h1#title {
 }
 
 main {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 80%;
-    margin: 5% auto;
+    margin: 2% auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
@@ -63,12 +75,16 @@ main {
 main p#description {
     margin: 2% 0;
     padding: 1rem;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     font-weight: bold;
     text-align: center;
 }
 
 main form {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 80%;
     flex: 0 0 80%;
 }
 
@@ -86,24 +102,273 @@ main form fieldset > legend {
 }
 
 main form fieldset div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
-main form .labels {
+main form fieldset div div:first-child {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
     flex: 1 1 50%;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
-main form .fields {
+main form fieldset div div:last-child {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
     flex: 1 1 50%;
 }
 
-main form .fields .input-field {
+main form fieldset:nth-of-type(1) div div:last-child input,
+main form fieldset:nth-of-type(3) div div:last-child textarea {
     height: 20px;
     width: 280px;
     padding: 5px;
     margin: 10px;
     border: 1px solid #c0c0c0;
     border-radius: 2px;
+}
+
+main form fieldset:nth-of-type(3) div div:last-child textarea {
+    height: 100px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    resize: vertical;
+}
+
+#dropdown {
+    height: 35px;
+    width: 195px;
+    padding: 5px;
+    margin: 10px;
+    margin-top: 15px;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+}
+
+.flex-direction {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.flex-direction label {
+    margin: 5px 10px;
+}
+
+form > div:only-of-type {
+    display: flex;
+    justify-content: center;
+    margin: 5% 0;
+}
+
+button#submit {
+    position: relative;
+    padding: 10px 20px;
+    overflow: hidden;
+    background-color: unset;
+    border: 2px solid white;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-transition: all ease 400ms;
+    transition: all ease 400ms;
+}
+
+button#submit::before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    top: -250px;
+    left: -440px;
+    width: 400px;
+    height: 400px;
+    -webkit-transition: all ease 400ms;
+    transition: all ease 400ms;
+}
+
+button#submit span {
+    position: relative;
+    z-index: 2;
+    color: white;
+    -webkit-transition: all ease 400ms;
+    transition: all ease 400ms;
+}
+
+button#submit:hover span {
+    color: #100e17;
+}
+
+button#submit:hover::before {
+    left: -300px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+    body {
+        font-size: small;
+        background: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75) 10%, #100e17),
+        url("../img/backgrounds/contact-us.jpg") center / cover no-repeat fixed;
+    }
+
+    header h1#title {
+        font-size: 3rem;
+    }
+
+    main {
+        width: 100%;
+        background-color: unset;
+        border-radius: 0px;
+    }
+
+    main form {
+        flex-basis: 95%;
+    }
+
+    main form fieldset div {
+        flex-wrap: wrap;
+    }
+
+    main form fieldset div div:first-child {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 15px;
+    }
+    
+    main form fieldset div div:last-child {
+        flex: 1 1 100%;
+    }
+
+    main form fieldset:nth-of-type(1) div div:last-child input, 
+    main form fieldset:nth-of-type(3) div div:last-child textarea {
+        width: 250px;
+    }
+
+    main form fieldset:nth-of-type(3) div div:last-child textarea {
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 599px) {
+    body {
+        font-size: small;
+        background: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75) 10%, #100e17),
+        url("../img/backgrounds/contact-us.jpg") center / cover no-repeat fixed;
+    }
+
+    header h1#title {
+        font-size: 3rem;
+    }
+
+    main {
+        width: 100%;
+        background-color: unset;
+        border-radius: 0px;
+    }
+
+    main form fieldset div {
+        flex-wrap: wrap;
+    }
+
+    main form fieldset div div:first-child {
+        flex: 1 1 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+    
+    main form fieldset div div:last-child {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    main form fieldset:nth-of-type(1) div div:last-child input, 
+    main form fieldset:nth-of-type(3) div div:last-child textarea {
+        width: 250px;
+    }
+
+    main form fieldset:nth-of-type(3) div div:last-child textarea {
+        margin-top: 0;
+    }
+
+    .flex-direction label {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 719px) {
+    body {
+        font-size: small;
+        background: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75) 10%, #100e17),
+        url("../img/backgrounds/contact-us.jpg") center / cover no-repeat fixed;
+    }
+
+    header h1#title {
+        font-size: 3rem;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    main form {
+        flex-basis: 90%;
+    }
+
+    main form fieldset:nth-of-type(1) div div:last-child input, 
+    main form fieldset:nth-of-type(3) div div:last-child textarea {
+        width: 200px;
+    }
+
+    main form fieldset:nth-of-type(3) div div:last-child textarea {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 719px) {
+    body {
+        font-size: small;
+        background: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75) 10%, #100e17),
+        url("../img/backgrounds/contact-us.jpg") center / cover no-repeat fixed;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    main form {
+        flex-basis: 90%;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 839px) {
+    body {
+        font-size: small;
+        background: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75) 10%, #100e17),
+        url("../img/backgrounds/contact-us.jpg") center / cover no-repeat fixed;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    main form {
+        flex-basis: 90%;
+    }
 }
