@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Página web 'formulario' para FreeCodeCamp.">
+        <meta name="keywords" content="survey, form, formulario, FreeCodeCamp, Proyecto #2">
+        <meta name="author" content="René Rivas">
+        <meta name="copyright" content="FreeCodeCamp(C)">
+        <link rel="shortcut icon" href="img/favicon/fav.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/fontawesome.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>FCC: Survey Form</title>
+    </head>
+
+    <body>
+        <header>
+            <h1 id="title">Contáctenos</h1>
+        </header>
+        <main>
+            <p id="description">
+                Déjenos sus datos y en breve le atenderemos.
+            </p>
+
+            <form id="survey-form" action="" method="get">
+                <fieldset>
+                    <legend>Datos de Usuario</legend>
+                    <div>
+                        <div class="labels">
+                            <label id="name-label" for="name"><i class="fas fa-user"></i> Nombre: </label>
+                        </div>
+                        <div class="fields">
+                            <input type="text" name="name" id="name" class="input-field" placeholder="Nombre" required>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="labels">
+                            <label id="email-label"for="email"><i class="fas fa-address-card"></i> Email: </label>
+                        </div>
+                        <div class="fields">
+                            <input type="email" name="email" id="email" class="input-field" placeholder="example@email.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="labels">
+                            <label id="number-label" for="number"><i class="fas fa-sad-tear"></i> Edad: </label>
+                        </div>
+                        <div class="fields">
+                            <input type="number" name="age" id="number" class="input-field" min="1" max="125" placeholder="Ej.: 30" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Nivel Educativo y Gustos</legend>
+                </fieldset>
+            </form>
+        </main>
+
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>

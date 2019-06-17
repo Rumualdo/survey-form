@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+}
+
+html::-webkit-scrollbar-track {
+    background: linear-gradient(to right, #201c29, #201c29 1px, #100e17 1px, #100e17);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    color: white;
+    background: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75) 10%, #100e17),
+                url("../img/backgrounds/contact-us.jpg") center / 100vw 100vh no-repeat fixed;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1#title {
+    margin: 1% 0;
+    font-family: 'Raleway', sans-serif;
+    font-variant: small-caps;
+    font-size: 4rem;
+    text-align: center;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#333));
+    background: linear-gradient(to bottom, #eee, #333);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 5% auto;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+main p#description {
+    margin: 2% 0;
+    padding: 1rem;
+    flex: 0 0 50%;
+    font-weight: bold;
+    text-align: center;
+}
+
+main form {
+    flex: 0 0 80%;
+}
+
+main form fieldset {
+    margin: 4% 0;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+
+main form fieldset > legend {
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    border: 2px solid white;
+}
+
+main form fieldset div {
+    display: flex;
+}
+
+main form .labels {
+    flex: 1 1 50%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+main form .fields {
+    flex: 1 1 50%;
+}
+
+main form .fields .input-field {
+    height: 20px;
+    width: 280px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+}
